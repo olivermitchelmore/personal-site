@@ -1,0 +1,169 @@
+.topnav {
+    background-color: black;
+    height: 5rem;
+    margin: 0;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    font-size: x-large;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+@keyframes right-to-left {
+    from {
+        transform: translate(100vw, -50%);
+    }
+    to {
+        transform: translate(-100%, -50%);
+    }
+}
+
+.bird {
+    position: absolute;
+    top: 50%;
+    white-space: nowrap;
+    color: white;
+    font-size: xxx-large;
+    animation: right-to-left 5s linear infinite;
+    will-change: transform;
+}
+
+.board {
+    aspect-ratio: 1 / 1;
+    margin: auto;
+    border: 0.5px solid rgba(255, 255, 255, 1);
+}
+
+.bird pre {
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 30%;
+    height: calc(100vh - 5rem);
+    margin: auto;
+    padding: 2rem 5rem;
+    border-left: 0.5px solid rgba(255, 255, 255, 0.5);
+    border-right: 0.5px solid rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .topnav {
+        font-size: large;
+        height: 4rem;
+        gap: 3rem;
+    }
+
+    .main {
+        width: 100%;
+        margin: 0;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        padding: 0rem 1rem;
+    }
+}
+.topnav a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.70;
+}
+
+.topnav a:hover,
+.topnav a.active {
+    opacity: 1;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: black;
+    width: 100%;
+    position: relative;
+}
+
+body {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+h1, h2, h3 {
+    color: white;
+}
+
+.submission-controls {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.submission-controls input {
+    flex: 1;
+}
+
+#user_thought {
+    font-size: 1rem;
+    padding: 0.75rem;
+}
+
+.submission-controls button, input, textarea {
+    background-color: black;
+    border: 0.5px solid white;
+    color: white;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+.contact-form textarea {
+    flex: 1;
+    resize: none;
+}
+.contact-form button {
+    background-color: black;
+    border: 0.5px solid white;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    width: auto;
+    padding: 0.75rem 2rem;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: white;
+    color: black;
+}
+
+.contact-header {
+    position: relative;
+}
+
+.contact-header pre {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+
+.jerry-contact {
+    font-size: 0.5rem;
+}
