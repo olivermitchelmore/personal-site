@@ -12,21 +12,39 @@
 }
 
 @keyframes right-to-left {
-    from {
-        transform: translate(100vw, -50%);
+    0% {
+        transform: translateX(120vw) scaleX(1);
     }
-    to {
-        transform: translate(-100%, -50%);
+    20%, 27% {
+        transform: translateX(30vw) scaleX(1);
+    }
+    32%, 38% {
+        transform: translateX(20vw) scaleX(1);
+    }
+    49% {
+        transform: translateX(-60vw) scaleX(1);
+    }
+    50% {
+        transform: translateX(-60vw) scaleX(-1);
+    }
+    65%, 75% {
+        transform: translateX(20vw) scaleX(-1);
+    }
+    83%, 90% {
+        transform: translateX(60vw) scaleX(-1);
+    }
+    100% {
+        transform: translateX(120vw) scaleX(-1);
     }
 }
 
 .bird {
     position: absolute;
-    top: 50%;
+    top: 20%;
     white-space: nowrap;
     color: white;
     font-size: xxx-large;
-    animation: right-to-left 5s linear infinite;
+    animation: right-to-left 20s linear infinite;
     will-change: transform;
 }
 
@@ -66,6 +84,12 @@
         padding: 0 1rem;
         box-sizing: border-box;
         padding: 0rem 1rem;
+    }
+    
+    .bird {
+        top: 30%;
+        left: -20vw;
+        font-size: medium;
     }
 }
 .topnav a {
