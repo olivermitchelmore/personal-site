@@ -52,8 +52,18 @@
     aspect-ratio: 1 / 1;
     margin: auto;
     border: 0.5px solid rgba(255, 255, 255, 1);
+    container-type: inline-size;
 }
 
+.board div {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20cqw;
+    height: 20cqw;
+    background-color: grey;
+}
 .bird pre {
     margin: 0;
 }
@@ -63,7 +73,6 @@
     flex-direction: column;
     text-align: left;
     width: 30%;
-    height: calc(100vh - 5rem);
     margin: auto;
     padding: 2rem 5rem;
     border-left: 0.5px solid rgba(255, 255, 255, 0.5);
@@ -113,8 +122,8 @@ html, body {
 }
 
 body {
-    height: 100vh;
-    overflow-y: hidden;
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
 h1, h2, h3 {
