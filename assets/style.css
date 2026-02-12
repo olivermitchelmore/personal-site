@@ -125,12 +125,13 @@ html, body {
     overflow-x: hidden;
     background-color: black;
     width: 100%;
-    position: relative;
+    height: auto;
 }
 
 body {
     min-height: 100vh;
     overflow-y: auto;
+    position: relative;
 }
 
 h1, h2, h3 {
