@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Oliver Mitchelmore | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Oliver Mitchelmore | Personal Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/main.js" defer></script>
     <link rel="prefetch" href="/articles">
     <link rel="prefetch" href="/contact">
     <link rel="prefetch" href="/thought-board">
+    <link rel="prefetch" href="/birdwatching">
 </head>
 
 <body>
@@ -17,7 +21,45 @@
         <a href="/thought-board">Thought Board</a>
     </div>
     <div class="main">
-        <h1>Index page</h1>
+        <div class="welcome">
+            <h1>Welcome</h1>
+        </div>
+            <p>Hi, feel free to check out some of my projects below,
+                read some of my <a href="/articles">articles</a>, or 
+                relax with some <a href="/birdwatching">bird watching.</a>
+            </p>
+        <br>
+        <h3>Polymarket reward farmer | <a href="https://github.com/olivermitchelmore/polymarket_reward_farmer">[Github]</a></h3>
+        <ul>
+            <li>High throughput trading system to automatically collect polymarket liquidity rewards.</li>
+            <li>Built with tokio, an asynchronous runtime.</li>
+            <li>Utilizes lockless <a href="https://docs.rs/crossfire/">crossfire</a> channels to transfer incoming websocket data to main execution logic safely.</li>
+        </ul>
+        <h3>Hyprland window manager game | <a href="https://github.com/olivermitchelmore/hl-wm-game">[Github]</a></h3>
+        <ul>
+            <li>Created a small game to learn more about Unix sockets.</li>
+            <li>Interfaces with the <a href="https://wiki.hypr.land/IPC/">hyprland IPC sockets</a>.</li>
+            <li>Opens a specified number of windows and activates the "kill" command via a hyprland socket and times how long it takes for the player to 
+                "kill"(close) all windows by listening to the event socket. 
+            </li>
+        </ul>
+        <h3>Personal website - <a href="https://olliemitchelmore.com/index">olliemitchelmore.com</a> (work in progress) | <a href="https://github.com/olivermitchelmore/personal-site">[Github]</a></h3>
+        <ul>
+            <li>This website!</li>
+            <li>A lightweight, zero framework personal website build with raw HTML, CSS and JavaScript.</li>
+            <li>Includes a thought provoking social experiment called the thought board. More details <a href="/thought-board">here</a>.</li>
+            <li>Also includes birdwatching found <a href="/birdwatching">here</a>.</li>
+        </ul>
+        <h3>Personal website backend | <a href="https://github.com/olivermitchelmore/personal-site-backend">[Github]</a></h3>
+        <ul>
+            <li>A blazingly fast backend(api) written in rust with <a href="https://docs.rs/axum">axum</a>.</li>
+            <li>Handles the functionality of the <a href="/thought-board">thought board</a> by fulfilling get and post requests.</li>
+            <li>Facilitates the <a href="/contact">contact</a> page by handling the post request from the html form.</li>
+            <li>Uses PostgreSQL to handle thoughts and their positions on the thought board.</li>
+            <li>Sanitizes input to prevent cross site scripting or sql injection attacks</li>
+            <li>Running on a VPS running ubuntu based in germany.</li>
+        </ul>
+        <h3>And much much more coming soon!</h3>
     </div>
 
 </body>

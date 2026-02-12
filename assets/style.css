@@ -81,11 +81,16 @@
     color: white;
 }
 
+.welcome {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .topnav {
         font-size: medium;
         height: 4rem;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .main {
