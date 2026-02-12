@@ -208,3 +208,7 @@ h1, h2, h3 {
 .jerry-contact {
     font-size: 0.5rem;
 }
+
+a {
+    color: #00ceff;
+}
