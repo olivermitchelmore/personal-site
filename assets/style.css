@@ -1,3 +1,16 @@
+body::-webkit-scrollbar {
+    width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: black;
+    border: 3px solid white;
+}
+
 .topnav {
     background-color: black;
     height: 5rem;
