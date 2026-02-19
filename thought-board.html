@@ -19,6 +19,7 @@
     <div class="main">
         <h3>Thought board instructions</h3>
         <p>
+            *The thought board's functionality is incomplete and under active development*
             *ALL THOUGHTS WILL BE PUBLIC ONCE PLACED* <br>
             Type your thought in the text box and click add. Move your thought
             to your desired location on the thought board and click place. This
@@ -30,12 +31,15 @@
             currently limited to a maximum of 3 thoughts in a 24 hour period.
         </p>
         <div>
-            <div class="submission-controls">
+            <div class="add-thought-controls">
                 <input type="text" maxlength="100" id="user_thought" placeholder="Type thought here">
                 <button onclick="add_thought()">Add</button>
             </div>
-            <div class="board" id="thought_board">
+            <div class="board" id="thought_board" onpointermove="on_pointer_move(event)">
 
+            </div>
+            <div class="submission-controls">
+                <button onclick="submit_thought()">Submit</button>
             </div>
         </div>
     </div>

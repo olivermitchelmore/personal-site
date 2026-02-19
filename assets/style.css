@@ -56,6 +56,7 @@
 }
 
 .board div {
+    touch-action: none;
     position: absolute;
     display: flex;
     align-items: center;
@@ -63,7 +64,10 @@
     width: 20cqw;
     height: 20cqw;
     background-color: grey;
+    word-break: break-all;
+    overflow-y: auto;
 }
+
 .bird pre {
     margin: 0;
 }
@@ -138,13 +142,13 @@ h1, h2, h3 {
     color: white;
 }
 
-.submission-controls {
+.add-thought-controls {
     display: flex;
     width: 100%;
     justify-content: flex-start;
 }
 
-.submission-controls input {
+.add-thought-controls input {
     flex: 1;
 }
 
@@ -153,7 +157,7 @@ h1, h2, h3 {
     padding: 0.75rem;
 }
 
-.submission-controls button, input, textarea {
+.add-thought-controls button, input, textarea {
     background-color: black;
     border: 0.5px solid white;
     color: white;
@@ -211,4 +215,16 @@ h1, h2, h3 {
 
 a {
     color: #00ceff;
+}
+
+.submission-controls {
+    width: 100%;
+}
+
+.submission-controls button {
+    background-color: black;
+    border: 0.5px solid white;
+    color: white;
+    width: 100%;
+    height: 2.5rem;
 }
