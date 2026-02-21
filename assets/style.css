@@ -64,21 +64,22 @@ body::-webkit-scrollbar-thumb {
 .board {
     aspect-ratio: 1 / 1;
     margin: auto;
-    border: 0.5px solid rgba(255, 255, 255, 1);
+    border: 0.5px solid white;
     container-type: inline-size;
 }
 
 .board div {
+    border: 0.5px solid white;
     touch-action: none;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20cqw;
-    height: 20cqw;
-    background-color: grey;
+    width: 25cqw;
+    height: 25cqw;
     word-break: break-all;
     overflow-y: auto;
+    background-color: black;
 }
 
 .bird pre {

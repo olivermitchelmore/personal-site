@@ -5,18 +5,34 @@ let dragging = false;
 let offset_x = 0;
 let offset_y = 0;
 let thought_rect = null;
+let thought_width = null;
 
-function add_thought() {
+function add_active_thought() {
+    let old_thought = document.getElementById(new_thought_id);
+    if (old_thought) old_thought.remove();
+    
     let thought_text = document.getElementById("user_thought");
     let thought = document.createElement('div');
     thought.textContent = thought_text.value;
-    thought.classList.add("thought");
 
     thought.addEventListener("pointerdown", start_drag)
     board.addEventListener("pointerup", end_drag)
     thought.id = new_thought_id;
+    thought.style.border = "0.5px solid blue";
+    thought.style.zIndex = 10000;
 
     board.appendChild(thought);
+}
+
+function add_thought(thought) {
+    let new_thought = document.createElement('div');
+
+    new_thought.textContent = thought.thought;
+    new_thought.style.left = `${thought.x}px`;
+    new_thought.style.top = `${thought.y}px`;
+    new_thought.style.zIndex = thought.z;
+    
+    board.appendChild(new_thought);
 }
 
 function start_drag(event) {
@@ -45,33 +61,75 @@ function on_pointer_move(event) {
 
 function end_drag(event) {
     dragging = false;
-    console.log("not dragging");
 }
 
-function submit_thought() {
+async function submit_thought() {
     let new_thought = document.getElementById(new_thought_id);
     let thought_text = new_thought.textContent;
 
     let x_left = parseFloat(new_thought.style.left);
     let board_width = (board_rect.width - thought_rect.width);
-    let x_calc = Math.round(((x_left - board_rect.left) / board_width) * 100);
+    let x = Math.round(((x_left - board_rect.left) / board_width) * 1000);
 
     let y_top = parseFloat(new_thought.style.top);
-    let y_calc = Math.round(((y_top - board_rect.top) / board_width) * 100);
+    let y = Math.round(((y_top - board_rect.top) / board_width) * 1000);
 
-    let coordinates = { thought: thought_text, x: x_calc, y: y_calc };
-    let thought_coordinates = [coordinates];
+    new_thought.style.border = "0.5px solid orange"
 
-    display_thoughts(thought_coordinates);
+    const response = await fetch("https://api.olliemitchelmore.com/thought-submission", {
+        method: "POST",
+        body: JSON.stringify({
+            thought: thought_text,
+            x: x,
+            y: y
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    });
+
+    new_thought.remove();
+
+    if (response.ok) {
+        add_thought({ thought: thought_text, x: x_left, y: y_top, z: 999999 });
+    }
+    else {
+        console.error("Error submitting thought: ", response.status);
+    }
+}
+
+function get_thought_rect_size() {
+    let probe = document.createElement('div');
+    probe.style.border = "solid 0.5px black";
+    board.append(probe);
+    let rect = probe.getBoundingClientRect();
+    probe.remove();
+    thought_width = rect.width;
 }
 
 function display_thoughts(thought_list) {
-    let board_width = (board_rect.width - thought_rect.width);
+    if (!thought_width) get_thought_rect_size();
+
+    let board_width = (board_rect.width - thought_width);
     
     for (let thought of thought_list) {
-        console.log(thought);
-        let x = board_width * (thought.x / 100);
-        let y = board_width * (thought.y / 100);
-        console.log("x: ", x, "y: ", y);
+        thought.x = (board_width * (thought.x / 1000)) + board_rect.left;
+        thought.y = (board_width * (thought.y / 1000)) + board_rect.top;
+        add_thought(thought)
     }
 }
+
+async function get_thoughts() {
+    try {
+        const api_response = fetch("https://api.olliemitchelmore.com/thoughts").then(res => res.json());
+
+        get_thought_rect_size();
+
+        const thoughts = await api_response;
+        display_thoughts(thoughts);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+get_thoughts();
