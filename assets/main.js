@@ -41,7 +41,7 @@ function start_drag(event) {
     dragging = true;
 
     offset_x = event.clientX - thought_rect.left;
-    offset_y = event.clientY - thought_rect.top;
+    offset_y = event.clientY - thought_rect.top - window.pageYOffset;
 }
 
 function on_pointer_move(event) {
