@@ -1,23 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Oliver Mitchelmore | Thought board</title>
+    <title>Oliver Mitchelmore | Thought Board</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Oliver Mitchelmore | Thought board">
+    <meta name="description" content="The Thought Board: place a short public thought, drag it where you want, and submit. If yours is better than one already on the board, put it on top. Fifty characters max, three thoughts per person per day.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://olliemitchelmore.com/thought-board">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oliver Mitchelmore | Thought Board">
+    <meta property="og:description" content="The Thought Board: place a short public thought, drag it where you want, and submit. If yours is better than one already on the board, put it on top. Fifty characters max, three thoughts per person per day.">
+    <meta property="og:url" content="https://olliemitchelmore.com/thought-board">
+    <meta property="og:site_name" content="Oliver Mitchelmore">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Oliver Mitchelmore | Thought Board">
+    <meta name="twitter:description" content="The Thought Board: place a short public thought, drag it where you want, and submit. If yours is better than one already on the board, put it on top. Fifty characters max, three thoughts per person per day.">
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/main.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Thought Board",
+      "url": "https://olliemitchelmore.com/thought-board",
+      "description": "A public, self-moderating board where anyone can place short thoughts. Better thoughts go on top of weaker ones.",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "author": {
+        "@type": "Person",
+        "name": "Oliver Mitchelmore",
+        "url": "https://olliemitchelmore.com/"
+      }
+    }
+    </script>
 </head>
 
 <body>
-    <div class="topnav">
-        <a href="/index">Home</a>
+    <nav class="topnav" aria-label="Main">
+        <a href="/">Home</a>
         <a href="/contact">Contact</a>
         <a href="/articles">Articles</a>
         <a class="active" href="/thought-board">Thought Board</a>
-    </div>
-    <div class="main">
-        <h3>Thought board instructions</h3>
+    </nav>
+    <main class="main">
+        <h1>Thought board</h1>
         <p>
             *ALL THOUGHTS WILL BE PUBLIC ONCE PLACED* <br>
             Type your thought in the text box and click add. Drag your thought
@@ -42,6 +68,6 @@
                 <button onclick="submit_thought()">Submit</button>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>

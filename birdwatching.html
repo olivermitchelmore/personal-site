@@ -1,24 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Oliver Mitchelmore | Contact</title>
+    <title>Oliver Mitchelmore | Bird Watching</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Oliver Mitchelmore | Bird watching">
+    <meta name="description" content="Bird watching on Oliver Mitchelmore's site. An ASCII bird walks across the screen. There is also a looping chicken sound. That is the whole page.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://olliemitchelmore.com/birdwatching">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oliver Mitchelmore | Bird Watching">
+    <meta property="og:description" content="Bird watching on Oliver Mitchelmore's site. An ASCII bird walks across the screen. There is also a looping chicken sound. That is the whole page.">
+    <meta property="og:url" content="https://olliemitchelmore.com/birdwatching">
+    <meta property="og:site_name" content="Oliver Mitchelmore">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Oliver Mitchelmore | Bird Watching">
+    <meta name="twitter:description" content="Bird watching on Oliver Mitchelmore's site. An ASCII bird walks across the screen. There is also a looping chicken sound. That is the whole page.">
     <link rel="stylesheet" href="assets/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Bird Watching",
+      "url": "https://olliemitchelmore.com/birdwatching",
+      "description": "An ASCII bird walks across the screen, with a looping chicken sound.",
+      "author": {
+        "@type": "Person",
+        "name": "Oliver Mitchelmore",
+        "url": "https://olliemitchelmore.com/"
+      }
+    }
+    </script>
 </head>
 
 <body>
     <audio autoplay loop>
         <source src="assets/chicken_sound_effect2.mp3" type="audio/mpeg">
       </audio>
-    <div class="topnav">
-        <a href="/index">Home</a>
+    <nav class="topnav" aria-label="Main">
+        <a href="/">Home</a>
         <a href="/contact">Contact</a>
         <a href="/articles">Articles</a>
         <a href="/thought-board">Thought Board</a>
-    </div>
-    <div class="bird">
+    </nav>
+    <main class="bird">
+        <h1 class="visually-hidden">Bird watching</h1>
         <pre>
             ,~.
             ,-'__ `-,
@@ -38,9 +63,7 @@
                    ,--'/`  '
                       '
         </pre>
-        
-
-    </div>
+    </main>
 </body>
 
 </html>
